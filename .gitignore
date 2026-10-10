@@ -1,4 +1,6 @@
 build/
 log/
 install/
+datasets/
+models/
 idea.org

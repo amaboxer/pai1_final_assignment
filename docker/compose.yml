@@ -1,0 +1,20 @@
+services:
+  ros:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+    container_name: turtlebot3
+
+    stdin_open: true
+    tty: true
+
+    network_mode: host
+
+    volumes:
+      - ../src:/ros2_ws/src
+      - ../datasets:/ros2_ws/datasets
+      - ../models:/ros2_ws/models
+
+    environment:
+      - TURTLEBOT3_MODEL=burger
