@@ -3,6 +3,8 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+       
+    user: "1000:1000" # uid(1000), gid(1000) で実行
 
     container_name: turtlebot3
 
@@ -12,9 +14,12 @@ services:
     network_mode: host
 
     volumes:
-      - ../src:/ros2_ws/src
-      - ../datasets:/ros2_ws/datasets
-      - ../models:/ros2_ws/models
+      - ..:/ros2_ws
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
 
     environment:
+      - DISPLAY=${DISPLAY}
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
       - TURTLEBOT3_MODEL=burger

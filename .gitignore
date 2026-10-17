@@ -3,4 +3,5 @@ log/
 install/
 datasets/
 models/
-idea.org
+core
+core.*

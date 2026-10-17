@@ -1,0 +1,39 @@
+* 構想
+  - 迷路を解くロボットを作る
+  - 動かすロボット:車
+    - TurtleBot3   
+  - 搭載するセンサ: カメラ
+  - 学習
+    - カメラ画像とデモで模倣学習
+    - 強化学習
+    - なしでモデルを取ってくる
+  - 汎化
+    - 可能であれば複数迷路を作って、train, valid, test にわけて、汎化を狙う。
+* 実装の流れ
+** docker, git 環境構築
+   #+BEGIN_QUOTE
+github
+├── docker/
+├── src/
+├── models/
+├── datasets/
+└── README.md
+#+END_QUOTE
+このようなファイル構成を目指すことにする。
+*** DONE Git [2/2]
+    - [X] Git
+    - [X] GitHub
+      - 空のディレクトリはレポジトリに反映されない。
+*** DONE Docker [2/2]
+    - [X] Dockerfile       
+    - [X] docker-compose.yml
+    - docker に入れていくライブラリ
+      - pip, colcon
+      - turtlebot3
+      - turtlebot3-simulations
+      - pytorch, opencv
+
+** TurtleBot3 をキーで動かせるようにする。
+** データ収集
+** 学習
+** 録画
